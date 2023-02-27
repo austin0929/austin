@@ -7,7 +7,7 @@
 <meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://images.unsplash.com/photo-1608889825205-eebdb9fc5806?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80">
 <meta property="article:published_time" content="2023-02-26T18:11:43.000Z">
-<meta property="article:modified_time" content="2023-02-27T09:39:31.572Z">
+<meta property="article:modified_time" content="2023-02-27T13:41:53.232Z">
 <meta property="article:author" content="小陳寫程式">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://images.unsplash.com/photo-1608889825205-eebdb9fc5806?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80"><link rel="shortcut icon" href="/hexoBlog/img/favicon.png"><link rel="canonical" href="https://austin0929.github.io/hexoBlog/2023/02/27/Callback-Hell%E8%88%87Promise/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/hexoBlog/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
@@ -56,7 +56,7 @@
   isHome: false,
   isHighlightShrink: false,
   isToc: true,
-  postUpdate: '2023-02-27 17:39:31'
+  postUpdate: '2023-02-27 21:41:53'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -160,7 +160,7 @@
       }
     }
     detectApple()
-    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://images.unsplash.com/photo-1608889825205-eebdb9fc5806?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2080&amp;q=80" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/hexoBlog/archives/"><div class="headline">Articles</div><div class="length-num">4</div></a><a href="/hexoBlog/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/hexoBlog/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/hexoBlog/" title="小陳寫程式"><span class="site-name">小陳寫程式</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Callback Hell與Promise</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2023-02-26T18:11:43.000Z" title="Created 2023-02-27 02:11:43">2023-02-27</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-02-27T09:39:31.572Z" title="Updated 2023-02-27 17:39:31">2023-02-27</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Callback Hell與Promise"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p style="font-size :18px">
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://images.unsplash.com/photo-1608889825205-eebdb9fc5806?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2080&amp;q=80" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/hexoBlog/archives/"><div class="headline">Articles</div><div class="length-num">4</div></a><a href="/hexoBlog/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/hexoBlog/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/hexoBlog/" title="小陳寫程式"><span class="site-name">小陳寫程式</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Callback Hell與Promise</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2023-02-26T18:11:43.000Z" title="Created 2023-02-27 02:11:43">2023-02-27</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-02-27T13:41:53.232Z" title="Updated 2023-02-27 21:41:53">2023-02-27</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Callback Hell與Promise"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p style="font-size :18px">
 在JavaScript中有同步與非同步語法，今天我們來介紹關於Callback-Hell與Promise
 </p>
 
@@ -202,7 +202,7 @@ reject是Promise執行失敗的結果，並將錯誤訊息作為參數傳入reje
 </p>
 
 <h2 id="pending"><a href="#pending" class="headerlink" title="pending"></a>pending</h2><p style="font-size :18px">
-pending狀態是在Promise建立後到執行前這段時間，這段時間內不會有任何結果，值到resolve或reject被呼叫
+pending狀態是在Promise建立後到執行前這段時間，這段時間內不會有任何結果，直到resolve或reject被呼叫
 </p>
 
 <hr>
