@@ -3813,7 +3813,7 @@ h1.page-title + .tag-cloud-list {
   color: var(--white);
 }
 #post .tag_share .post_share {
-  display: inline-block;
+  display: none;
   float: right;
   margin: 8px 0 0;
   width: fit-content;
