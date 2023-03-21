@@ -54,7 +54,7 @@
   isHome: true,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2023-03-16 12:19:15'
+  postUpdate: '2023-03-21 23:02:22'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -158,7 +158,100 @@
       }
     }
     detectApple()
-    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://images.unsplash.com/photo-1608889825205-eebdb9fc5806?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2080&amp;q=80" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/hexoBlog/archives/"><div class="headline">Articles</div><div class="length-num">10</div></a><a href="/hexoBlog/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/hexoBlog/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><hr/></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('https://images.unsplash.com/photo-1472457897821-70d3819a0e24?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2069&amp;q=80')"><nav id="nav"><span id="blog-info"><a href="/hexoBlog/" title="小陳寫程式"><span class="site-name">小陳寫程式</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">小陳寫程式</h1><div id="site-subtitle"><span id="subtitle"></span></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/hexoBlog/2023/03/16/%E5%9C%A8Vue-Cli%E7%92%B0%E5%A2%83%E4%B8%AD%E5%8A%A0%E5%85%A5Vue%E5%85%83%E4%BB%B6%E5%90%A7/" title="在Vue Cli環境中加入Vue元件吧">在Vue Cli環境中加入Vue元件吧</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-03-16T03:24:24.000Z" title="Created 2023-03-16 11:24:24">2023-03-16</time></span></div><div class="content">如何匯入元件
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://images.unsplash.com/photo-1608889825205-eebdb9fc5806?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2080&amp;q=80" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/hexoBlog/archives/"><div class="headline">Articles</div><div class="length-num">13</div></a><a href="/hexoBlog/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/hexoBlog/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><hr/></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('https://images.unsplash.com/photo-1472457897821-70d3819a0e24?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2069&amp;q=80')"><nav id="nav"><span id="blog-info"><a href="/hexoBlog/" title="小陳寫程式"><span class="site-name">小陳寫程式</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">小陳寫程式</h1><div id="site-subtitle"><span id="subtitle"></span></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/hexoBlog/2023/03/21/router-view%E5%85%B7%E5%90%8D%E8%A6%96%E5%9C%96%E6%98%AF%E4%BB%80%E9%BA%BC/" title="router-view具名視圖是什麼?">router-view具名視圖是什麼?</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-03-21T13:45:18.000Z" title="Created 2023-03-21 21:45:18">2023-03-21</time></span></div><div class="content">router-view具名視圖是什麼?
+具名視圖指的是如果一個元件內有超過2個以上的router-view，為了讓元件可以知道並對應到相對的router-view位置，我們必須對router-view做命名。
+
+
+
+如下圖在NamedView頁面中有兩個router-view，為了讓C組件與A組件正確的被放置到正確的router-view上，才需要對router-view進行命名。
+
+
+
+
+命名router-view
+如下圖範例中，這是一個NamedViewd的元件，使用bootstrap格線分割成兩個區塊，
+並有兩個router-view並使用name各自命名。
+
+
+
+
+命名完後接下來來處理路由表。
+
+
+
+新增具名視圖元件路由
+接著對具名視圖元件新增路由，在nameView路由下新增子路由，子路由components則是帶入
+元件的相對應屬性如left，right後再把元件匯入到這兩個屬性。
+
+
+
+
+最後在使用router-link來對應路由的路徑並執行。
+
+
+
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/hexoBlog/2023/03/21/Vue-Router%E5%B7%A2%E7%8B%80%E8%B7%AF%E7%94%B1/" title="Vue Router巢狀路由">Vue Router巢狀路由</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-03-21T10:06:04.000Z" title="Created 2023-03-21 18:06:04">2023-03-21</time></span></div><div class="content">Vue Router巢狀路由
+前言:
+Vue Router巢狀路由是一個可以在父路由下定義子路由的功能，透過多個子路由的路徑去匹配多個元件，並渲染在父路由的父組件之下，
+以下範例。
+
+
+
+建立元件與新增子路由
+先建立元件，範例中我們建立了componentA , componentB , componentC三個元件，這三個元件將會是子組件並被加入到NewPage中。
+
+
+
+
+在上圖中，回到router頁面並在父路由NewPage內加入children陣列物件來加入子路由路徑與匯入剛剛建立的三個元件。
+
+
+
+指定渲染位置
+路由設定好後，在NewPage.vue中渲染，當點擊對應連結路由匹配後會啟動對應元件。
+
+
+
+
+這樣就完成了巢狀路由的範例，通過這種方式可以讓組件的使用更加靈活。
+
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/hexoBlog/2023/03/21/Vue-Router%E4%BB%8B%E7%B4%B9/" title="Vue Router介紹">Vue Router介紹</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-03-21T04:52:37.000Z" title="Created 2023-03-21 12:52:37">2023-03-21</time></span></div><div class="content">Vue Router介紹
+前言 :
+Vue Router是由前端模擬的路由，例如切換頁面，以前通常是後端進行處理，現在透過Vue Router可以為每個路由指定對應組件，並通過自訂路由來渲染這些組件，而不用從後端獲取頁面內容
+
+
+
+Vue Router起手式
+先從基本的起手式開始。
+
+
+
+
+Vue Router匯入路由表
+在路由表內匯入路徑與對應元件，當進入設定路徑時，開啟對應元件。
+
+
+
+
+畫面還不會顯示，需要使用router-view後輸入對應路徑來渲染。
+
+
+
+router-view與router-linkrouter-view
+router-view只有在匹配到對應路由才會渲染對應的元件，如果Url內沒有匹配道路由，router-view將不會作用。
+
+
+router-link
+由於用戶不會去更改網址路徑去做切換，我們必須要給予一個連結來讓用戶點擊切換
+，這時就會使用router-link。
+
+
+
+
+透過router-link來對應路徑可以讓router-view渲染出匹配元件。
+
+
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/hexoBlog/2023/03/16/%E5%9C%A8Vue-Cli%E7%92%B0%E5%A2%83%E4%B8%AD%E5%8A%A0%E5%85%A5Vue%E5%85%83%E4%BB%B6%E5%90%A7/" title="在Vue Cli環境中加入Vue元件吧">在Vue Cli環境中加入Vue元件吧</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-03-16T03:24:24.000Z" title="Created 2023-03-16 11:24:24">2023-03-16</time></span></div><div class="content">如何匯入元件
 上一篇文章中提到，Vue Cli的安裝，安裝後啟用npm run serve
 會出現本地網址進入後是這個頁面。
 
@@ -435,65 +528,7 @@ Promise是一個Js處理非同步的語法，他解決了Callback-Hell的問題�
 
 
 使用Promise後可以避免回呼地獄也不會有巢狀結構問題，可讀性提高更好理解與維護
-使用.then()可以依序執行非同步語 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/hexoBlog/2023/02/25/JavaScript-%E9%99%A3%E5%88%97%E8%99%95%E7%90%86%E6%96%B9%E6%B3%95forEach-map-filter/" title="JavaScript 陣列處理方法forEach, map, filter">JavaScript 陣列處理方法forEach, map, filter</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-02-24T19:17:33.000Z" title="Created 2023-02-25 03:17:33">2023-02-25</time></span></div><div class="content">
-以下介紹這三種陣列使用方法 
-
-
-forEach
-單純把陣列中的物件全部取出，無法return回傳值
-
-
-
-map
-map跟forEach很像，差別在map會把生成一個新陣列把物件帶入，需使用return
-回傳值，不回傳是undefined
-
-
-
-filter
-可以篩選出你需要的物件並把所有判斷後true的物件組合成新的陣列
-並回傳，
-
-
-
-結論
-由於map跟，filter陣列處理方式比較少使用，
-做幾個範例並記錄，後面還有幾個陣列處理方式再慢慢補上。
-</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/hexoBlog/2023/02/25/%E5%B8%B8%E7%94%A8hexo%E6%8C%87%E4%BB%A4/" title="常用hexo指令">常用hexo指令</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-02-24T18:44:13.000Z" title="Created 2023-02-25 02:44:13">2023-02-25</time></span></div><div class="content">Hexo常用指令
-1.hexo generate 產生靜態檔案 (hexo g)
-
-2.hexo deploy 部屬到遠端伺服器，如GitHub (hexo d)
-
-3.hexo new "文章名稱" 建立一個新文章 (hexo n)
-
-4.hexo server 在本地端開啟模擬伺服器 (hexo s)
-
-5.hexo clean 清除快取檔案，以及編譯檔案
-
-
-
-hexo clean
-特別挑出來講是因為有時候會出現一些問題，
-這時可以使用hexo clean清除快取檔案 (db.json)
- 以及編譯檔案 (public)後再重新佈署
-
-
-心得
-目前還在習慣用hexo寫文章，先記錄下重要語法
-第一篇就來介紹hexo指令吧
-
-
-
-</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/hexoBlog/2023/02/23/JavaScript%E9%96%89%E5%8C%85%E4%BB%8B%E7%B4%B9/" title="JavaScript閉包介紹">JavaScript閉包介紹</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-02-22T17:31:27.000Z" title="Created 2023-02-23 01:31:27">2023-02-23</time></span></div><div class="content">JavaScript 閉包是什麼?閉包簡單來說就是在函式中回傳一個函式，透過封裝元素讓函式內記憶體不會被釋放
-並可以不斷調用。
-
-範例
-
-透過封裝count這個變數，讓count可以不斷被計算
-而且可以獨立出來，簡單來說david會有一個count變數，john也有一個count變數，
-各自計算是不會互相干擾的，只能在myMoney函式內取用
-，雖然取用同一個函式，但都各自執行。
-</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://images.unsplash.com/photo-1608889825205-eebdb9fc5806?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2080&amp;q=80" onerror="this.onerror=null;this.src='/hexoBlog/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">小陳寫程式</div><div class="author-info__description">不放手，直到夢想到手</div></div><div class="card-info-data site-data is-center"><a href="/hexoBlog/archives/"><div class="headline">Articles</div><div class="length-num">10</div></a><a href="/hexoBlog/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/hexoBlog/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/hexoBlog/2023/03/16/%E5%9C%A8Vue-Cli%E7%92%B0%E5%A2%83%E4%B8%AD%E5%8A%A0%E5%85%A5Vue%E5%85%83%E4%BB%B6%E5%90%A7/" title="在Vue Cli環境中加入Vue元件吧">在Vue Cli環境中加入Vue元件吧</a><time datetime="2023-03-16T03:24:24.000Z" title="Created 2023-03-16 11:24:24">2023-03-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/hexoBlog/2023/03/16/%E5%AE%89%E8%A3%9DVue-Cli%E7%92%B0%E5%A2%83/" title="安裝Vue Cli環境">安裝Vue Cli環境</a><time datetime="2023-03-15T16:00:57.000Z" title="Created 2023-03-16 00:00:57">2023-03-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/hexoBlog/2023/03/13/JavaScript%E9%97%9C%E6%96%BCthis%E4%BB%8B%E7%B4%B9/" title="JavaScript關於this介紹">JavaScript關於this介紹</a><time datetime="2023-03-13T14:57:03.000Z" title="Created 2023-03-13 22:57:03">2023-03-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/hexoBlog/2023/03/13/Vue%E4%BD%BF%E7%94%A8provide%E8%88%87inject%E9%80%B2%E8%A1%8C%E8%B7%A8%E5%85%83%E4%BB%B6%E5%82%B3%E9%81%9E%E5%90%A7/" title="Vue使用provide與inject進行跨元件傳遞吧">Vue使用provide與inject進行跨元件傳遞吧</a><time datetime="2023-03-13T11:59:30.000Z" title="Created 2023-03-13 19:59:30">2023-03-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/hexoBlog/2023/03/07/Vue3%E9%97%9C%E6%96%BCProps%E5%82%B3%E9%81%9E/" title="Vue3關於Props傳遞">Vue3關於Props傳遞</a><time datetime="2023-03-07T14:43:42.000Z" title="Created 2023-03-07 22:43:42">2023-03-07</time></div></div></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>Archives</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/hexoBlog/archives/2023/03/"><span class="card-archive-list-date">三月 2023</span><span class="card-archive-list-count">6</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/hexoBlog/archives/2023/02/"><span class="card-archive-list-date">二月 2023</span><span class="card-archive-list-count">4</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article :</div><div class="item-count">10</div></div><div class="webinfo-item"><div class="item-name">UV :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">PV :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Last Push :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-03-16T04:19:15.883Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By 小陳寫程式</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/hexoBlog/js/utils.js"></script><script src="/hexoBlog/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>window.typedJSFn = {
+使用.then()可以依序執行非同步語 ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/hexoBlog/page/2/#content-inner">2</a><a class="extend next" rel="next" href="/hexoBlog/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://images.unsplash.com/photo-1608889825205-eebdb9fc5806?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2080&amp;q=80" onerror="this.onerror=null;this.src='/hexoBlog/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">小陳寫程式</div><div class="author-info__description">不放手，直到夢想到手</div></div><div class="card-info-data site-data is-center"><a href="/hexoBlog/archives/"><div class="headline">Articles</div><div class="length-num">13</div></a><a href="/hexoBlog/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/hexoBlog/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/hexoBlog/2023/03/21/router-view%E5%85%B7%E5%90%8D%E8%A6%96%E5%9C%96%E6%98%AF%E4%BB%80%E9%BA%BC/" title="router-view具名視圖是什麼?">router-view具名視圖是什麼?</a><time datetime="2023-03-21T13:45:18.000Z" title="Created 2023-03-21 21:45:18">2023-03-21</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/hexoBlog/2023/03/21/Vue-Router%E5%B7%A2%E7%8B%80%E8%B7%AF%E7%94%B1/" title="Vue Router巢狀路由">Vue Router巢狀路由</a><time datetime="2023-03-21T10:06:04.000Z" title="Created 2023-03-21 18:06:04">2023-03-21</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/hexoBlog/2023/03/21/Vue-Router%E4%BB%8B%E7%B4%B9/" title="Vue Router介紹">Vue Router介紹</a><time datetime="2023-03-21T04:52:37.000Z" title="Created 2023-03-21 12:52:37">2023-03-21</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/hexoBlog/2023/03/16/%E5%9C%A8Vue-Cli%E7%92%B0%E5%A2%83%E4%B8%AD%E5%8A%A0%E5%85%A5Vue%E5%85%83%E4%BB%B6%E5%90%A7/" title="在Vue Cli環境中加入Vue元件吧">在Vue Cli環境中加入Vue元件吧</a><time datetime="2023-03-16T03:24:24.000Z" title="Created 2023-03-16 11:24:24">2023-03-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/hexoBlog/2023/03/16/%E5%AE%89%E8%A3%9DVue-Cli%E7%92%B0%E5%A2%83/" title="安裝Vue Cli環境">安裝Vue Cli環境</a><time datetime="2023-03-15T16:00:57.000Z" title="Created 2023-03-16 00:00:57">2023-03-16</time></div></div></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>Archives</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/hexoBlog/archives/2023/03/"><span class="card-archive-list-date">三月 2023</span><span class="card-archive-list-count">9</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/hexoBlog/archives/2023/02/"><span class="card-archive-list-date">二月 2023</span><span class="card-archive-list-count">4</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article :</div><div class="item-count">13</div></div><div class="webinfo-item"><div class="item-name">UV :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">PV :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Last Push :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-03-21T15:02:22.005Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By 小陳寫程式</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/hexoBlog/js/utils.js"></script><script src="/hexoBlog/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>window.typedJSFn = {
   init: (str) => {
     window.typed = new Typed('#subtitle', Object.assign({
       strings: str,
