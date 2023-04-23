@@ -1,0 +1,246 @@
+<!DOCTYPE html><html lang="zh-tw" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>Vue Cli中使用VeeValidate套件來驗證 | 小陳寫程式</title><meta name="author" content="小陳寫程式"><meta name="copyright" content="小陳寫程式"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Vue Cli中使用VeeValidate套件 最近在接觸做表單練習，會需要驗證表單， 讓我們來學習一下如何使用VeeValidate套件吧    安裝VeeValidate 使用終端機或vsCode終端機內輸入: npm install vee-validate   這邊的vee-validate並不包含驗證規則，所以我們要另外安裝 驗證規則套件，輸入以下指令 npm install @vee-">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue Cli中使用VeeValidate套件來驗證">
+<meta property="og:url" content="https://austin0929.github.io/hexoBlog/2023/04/23/Vue-Cli%E4%B8%AD%E4%BD%BF%E7%94%A8VeeValidate%E5%A5%97%E4%BB%B6%E4%BE%86%E9%A9%97%E8%AD%89/index.html">
+<meta property="og:site_name" content="小陳寫程式">
+<meta property="og:description" content="Vue Cli中使用VeeValidate套件 最近在接觸做表單練習，會需要驗證表單， 讓我們來學習一下如何使用VeeValidate套件吧    安裝VeeValidate 使用終端機或vsCode終端機內輸入: npm install vee-validate   這邊的vee-validate並不包含驗證規則，所以我們要另外安裝 驗證規則套件，輸入以下指令 npm install @vee-">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://images.unsplash.com/photo-1608889825205-eebdb9fc5806?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80">
+<meta property="article:published_time" content="2023-04-23T08:37:04.000Z">
+<meta property="article:modified_time" content="2023-04-23T10:43:28.332Z">
+<meta property="article:author" content="小陳寫程式">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1608889825205-eebdb9fc5806?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80"><link rel="shortcut icon" href="/hexoBlog/img/favicon.png"><link rel="canonical" href="https://austin0929.github.io/hexoBlog/2023/04/23/Vue-Cli%E4%B8%AD%E4%BD%BF%E7%94%A8VeeValidate%E5%A5%97%E4%BB%B6%E4%BE%86%E9%A9%97%E8%AD%89/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/hexoBlog/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/hexoBlog/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Vue Cli中使用VeeValidate套件來驗證',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-04-23 18:43:28'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://images.unsplash.com/photo-1608889825205-eebdb9fc5806?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2080&amp;q=80" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/hexoBlog/archives/"><div class="headline">Articles</div><div class="length-num">17</div></a><a href="/hexoBlog/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/hexoBlog/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/hexoBlog/" title="小陳寫程式"><span class="site-name">小陳寫程式</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Vue Cli中使用VeeValidate套件來驗證</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2023-04-23T08:37:04.000Z" title="Created 2023-04-23 16:37:04">2023-04-23</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-04-23T10:43:28.332Z" title="Updated 2023-04-23 18:43:28">2023-04-23</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Vue Cli中使用VeeValidate套件來驗證"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Vue-Cli中使用VeeValidate套件"><a href="#Vue-Cli中使用VeeValidate套件" class="headerlink" title="Vue Cli中使用VeeValidate套件"></a>Vue Cli中使用VeeValidate套件</h1><p style="font-size :18px">
+最近在接觸做表單練習，會需要驗證表單，
+讓我們來學習一下如何使用VeeValidate套件吧
+</p>
+
+<hr>
+<h2 id="安裝VeeValidate"><a href="#安裝VeeValidate" class="headerlink" title="安裝VeeValidate"></a>安裝VeeValidate</h2><p style="font-size :18px">
+使用終端機或vsCode終端機內輸入:<br>
+npm install vee-validate<br>
+</p>
+<p style="font-size :18px">
+這邊的vee-validate並不包含驗證規則，所以我們要另外安裝
+驗證規則套件，輸入以下指令<br>
+npm install @vee-validate/rules
+</p>
+<p style="font-size :18px">
+接著把多國語系安裝<br>
+npm install @vee-validate/i18n
+</p>
+
+<hr>
+<h1 id="匯入VeeValidate"><a href="#匯入VeeValidate" class="headerlink" title="匯入VeeValidate"></a>匯入VeeValidate</h1><p style="font-size :18px">
+接下來要匯入VeeValidate到我們的Vue Cli中，這邊我們使用全域匯入，
+區域匯入的話基本上大同小異，接著看匯入方式。
+</p>
+
+<h2 id="全域匯入"><a href="#全域匯入" class="headerlink" title="全域匯入"></a>全域匯入</h2><p style="font-size :18px">
+我們會再Vue Cli中的main.js內匯入元件
+</p>
+
+<p><img src="https://ithelp.ithome.com.tw/upload/images/20230423/201579656Dmp3fclen.jpg"></p>
+<p style="font-size :18px">
+接著把程式碼打上來看看有沒有成功，用其他組件也行只是試一下，此範例是用app.vue組件
+</p>
+
+<p><img src="https://ithelp.ithome.com.tw/upload/images/20230423/20157965f99naPc9Jt.jpg"></p>
+<p style="font-size :18px">
+打開瀏覽器看是否畫面上多了一個input輸入框，當你輸入文字時會有一些提示，都有的
+話代表有成功匯入及註冊。
+</p>
+
+<p><img src="https://ithelp.ithome.com.tw/upload/images/20230423/20157965WTUNIFVHP7.jpg"></p>
+<hr>
+<h1 id="自訂驗證"><a href="#自訂驗證" class="headerlink" title="自訂驗證"></a>自訂驗證</h1><p style="font-size :18px">
+有時候我們不想使用預設驗證，也可以使用自訂的方式，
+例如自訂一個函式並使用v-bind綁定
+</p>
+
+<p><img src="https://ithelp.ithome.com.tw/upload/images/20230423/20157965V8ICXs9CQP.jpg"></p>
+<p style="font-size :18px">
+上圖中我們使用 :rules="isPhone" 來做綁定
+</p>
+<p style="font-size :18px">
+接著在methods加入我們自訂的規則就完成了
+</p>
+
+<p><img src="https://ithelp.ithome.com.tw/upload/images/20230423/20157965FxYXFzwCKM.jpg"></p>
+<h2 id="驗證表單是否完整"><a href="#驗證表單是否完整" class="headerlink" title="驗證表單是否完整"></a>驗證表單是否完整</h2><p style="font-size :18px">
+如果希望要把表單全部填寫才能送出，可以使用 Form 元件的 v-slot 來達成
+</p>
+
+<p><img src="https://ithelp.ithome.com.tw/upload/images/20230423/20157965Yfe6mbIG9u.jpg"></p>
+<p style="font-size :18px">
+當表單不完整或格式錯誤就會無法送出表單
+</p>
+
+<hr>
+<h1 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h1><p style="font-size :18px">
+在使用VeeValidate有一些小細節需要注意
+</p>
+
+<h2 id="驗證規則"><a href="#驗證規則" class="headerlink" title="驗證規則"></a>驗證規則</h2><p style="font-size :18px">
+關於VeeValidate的驗證規則，當你需要驗證多個規則時，必須使用 | 符號來做區隔
+</p>
+
+<p><img src="https://ithelp.ithome.com.tw/upload/images/20230423/20157965pKeGbGCCSa.jpg"></p>
+<p style="font-size :18px">
+上圖中的rules內有兩個規則所以我們用到 | 來做區隔。
+</p>
+
+
+
+
+</article><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://images.unsplash.com/photo-1608889825205-eebdb9fc5806?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2080&amp;q=80" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/hexoBlog/2023/03/31/%E5%9C%A8Vue-Cli%E4%B8%AD%E5%8A%A0%E5%85%A5Bootstrap-Modal/" title="在Vue Cli中加入Bootstrap Modal"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">在Vue Cli中加入Bootstrap Modal</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://images.unsplash.com/photo-1608889825205-eebdb9fc5806?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2080&amp;q=80" onerror="this.onerror=null;this.src='/hexoBlog/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">小陳寫程式</div><div class="author-info__description">不放手，直到夢想到手</div></div><div class="card-info-data site-data is-center"><a href="/hexoBlog/archives/"><div class="headline">Articles</div><div class="length-num">17</div></a><a href="/hexoBlog/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/hexoBlog/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Vue-Cli%E4%B8%AD%E4%BD%BF%E7%94%A8VeeValidate%E5%A5%97%E4%BB%B6"><span class="toc-number">1.</span> <span class="toc-text">Vue Cli中使用VeeValidate套件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%9DVeeValidate"><span class="toc-number">1.1.</span> <span class="toc-text">安裝VeeValidate</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8C%AF%E5%85%A5VeeValidate"><span class="toc-number">2.</span> <span class="toc-text">匯入VeeValidate</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%A8%E5%9F%9F%E5%8C%AF%E5%85%A5"><span class="toc-number">2.1.</span> <span class="toc-text">全域匯入</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%87%AA%E8%A8%82%E9%A9%97%E8%AD%89"><span class="toc-number">3.</span> <span class="toc-text">自訂驗證</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A9%97%E8%AD%89%E8%A1%A8%E5%96%AE%E6%98%AF%E5%90%A6%E5%AE%8C%E6%95%B4"><span class="toc-number">3.1.</span> <span class="toc-text">驗證表單是否完整</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85"><span class="toc-number">4.</span> <span class="toc-text">注意事項</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A9%97%E8%AD%89%E8%A6%8F%E5%89%87"><span class="toc-number">4.1.</span> <span class="toc-text">驗證規則</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/hexoBlog/2023/04/23/Vue-Cli%E4%B8%AD%E4%BD%BF%E7%94%A8VeeValidate%E5%A5%97%E4%BB%B6%E4%BE%86%E9%A9%97%E8%AD%89/" title="Vue Cli中使用VeeValidate套件來驗證">Vue Cli中使用VeeValidate套件來驗證</a><time datetime="2023-04-23T08:37:04.000Z" title="Created 2023-04-23 16:37:04">2023-04-23</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/hexoBlog/2023/03/31/%E5%9C%A8Vue-Cli%E4%B8%AD%E5%8A%A0%E5%85%A5Bootstrap-Modal/" title="在Vue Cli中加入Bootstrap Modal">在Vue Cli中加入Bootstrap Modal</a><time datetime="2023-03-31T15:49:08.000Z" title="Created 2023-03-31 23:49:08">2023-03-31</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/hexoBlog/2023/03/27/%E5%9C%A8Vue-Cli%E4%B8%AD%E5%8C%AF%E5%85%A5Bootstrap%E4%B8%A6%E5%AE%A2%E8%A3%BD%E5%8C%96/" title="在Vue Cli中匯入Bootstrap並客製化">在Vue Cli中匯入Bootstrap並客製化</a><time datetime="2023-03-27T09:59:26.000Z" title="Created 2023-03-27 17:59:26">2023-03-27</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/hexoBlog/2023/03/23/Vue-Router%E4%B8%AD%E7%9A%84%E5%8B%95%E6%85%8B%E8%B7%AF%E7%94%B1/" title="Vue Router中的動態路由">Vue Router中的動態路由</a><time datetime="2023-03-23T09:20:36.000Z" title="Created 2023-03-23 17:20:36">2023-03-23</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/hexoBlog/2023/03/21/router-view%E5%85%B7%E5%90%8D%E8%A6%96%E5%9C%96%E6%98%AF%E4%BB%80%E9%BA%BC/" title="router-view具名視圖是什麼?">router-view具名視圖是什麼?</a><time datetime="2023-03-21T13:45:18.000Z" title="Created 2023-03-21 21:45:18">2023-03-21</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By 小陳寫程式</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/hexoBlog/js/utils.js"></script><script src="/hexoBlog/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
